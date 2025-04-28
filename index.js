@@ -482,11 +482,6 @@
 // const counter = count();
 // counter();
 
-// JavaScript में "Asynchronous"
-
-// जब कोई Asynchronous कार्य चल रहा होता है, तो बाकी का कोड बिना किसी रुकावट के चलता रहता है।
-// इसका उपयोग तब किया जाता है जब आपको लंबी-running प्रक्रियाएं जैसे कि API Call, Data Fetching या Timer का इस्तेमाल करना होता है।
-
 // Callback एक फंक्शन होता है जो किसी Asynchronous ऑपरेशन के बाद कॉल किया जाता है। यह फंक्शन back करके परिणाम देता है।
 
 // console.log("Callback 1");
@@ -496,3 +491,90 @@
 // }, 2000);
 
 // console.log("Callback 3");
+
+// Synchronous Programming(सिंक्रोनस प्रोग्रामिंग)
+// एक प्रकार की Programming होती है, जिसमें कोड के हर हिस्से को एक-एक करके, उसी क्रम में, निष्पादित किया जाता है।
+// यानी, जब तक कोई कार्य पूरा नहीं हो जाता, तब तक अगला कार्य शुरू नहीं होता है।
+
+// let a = prompt("Task 1 is starting...");
+// let b = prompt("Task 2 is starting...");
+// let c = prompt("Task 3 is starting...");
+// console.log(a, b, c);
+
+// function task1() {
+//   console.log("Task 1 is starting");
+//   for (let i = 0; i < 1000000000; i++) {}
+// }
+
+// function task2() {
+//   console.log("Task 2 is starting");
+//   for (let i = 0; i < 1000000000; i++) {}
+// }
+
+// task1();
+// task2();
+
+// Asynchronous JavaScript
+// JavaScript में "Asynchronous"
+
+// जब कोई Asynchronous कार्य चल रहा होता है, तो बाकी का कोड बिना किसी रुकावट के चलता रहता है।
+// इसका उपयोग तब किया जाता है जब आपको लंबी-running प्रक्रियाएं जैसे कि API Call, Data Fetching या Timer का इस्तेमाल करना होता है।
+//  ऐसा JavaScript कोड जिसे समय लेने वाली प्रक्रियाएं (जैसे API कॉल्स, डेटाबेस से डेटा प्राप्त करना, आदि) बिना रुकावट के चलने दें।
+// console.log("start");
+// setTimeout(() => {
+//   console.log("Asynchronous JavaScript");
+// }, 3000);
+// console.log("end");
+
+// Async/Await के साथ API से डेटा प्राप्त करना
+
+// async function fetchUserData() {
+//   try {
+//     console.log("डेटा लोड हो रहा है...");
+//     let response = await fetch("https://jsonplaceholder.typicode.com/users");
+
+//     if (!response.ok) {
+//       throw new Error("नेटवर्क समस्या!");
+//     }
+
+//     let users = await response.json();
+
+//     console.log("प्राप्त यूज़र डेटा:", users);
+//   } catch (error) {
+//     console.log("एरर:", error);
+//   }
+// }
+
+// fetchUserData();
+
+// Promise के साथ API से डेटा प्राप्त करना
+// async function fetchUserData() {
+//   await fetch("https://jsonplaceholder.typicode.com/users")
+//     .then((response) => response.json())
+//     .then((user) => {
+//       console.log(user);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// }
+
+// fetchUserData();
+
+// Callbacks | JavaScript
+
+function loadScript(src, callback) {
+  var script = document.createElement("script");
+  script.src = src;
+  script.onload = function () {
+    console.log("Loaded script with SRC" + src);
+    callback(src);
+  };
+  document.body.appendChild(script);
+}
+
+function hello(src) {
+  alert("Loaded script with SRC:", src);
+}
+
+loadScript("https://code.jquery.com/jquery-3.6.0.min.js", hello);
