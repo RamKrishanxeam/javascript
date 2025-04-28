@@ -398,3 +398,101 @@
 
 // 8️⃣ every() Method
 // console.log(3 + false);
+
+// let message = "global good";
+// function hello() {
+//   let message = "I am outer!";
+//   console.log("", message);
+//   let c = function hello1() {
+//     console.log("i am c", message);
+//   };
+//   return c;
+// }
+
+// c = hello();
+// c();
+
+// Global Scope (वैश्विक स्कोप):
+// JavaScript में यदि कोई वेरिएबल फ़ंक्शन के बाहर परिभाषित होता है, तो वह global scope में आता है।
+
+// let globalvar =
+//   "A global variable is a public variable defined outside a function.";
+
+// function globalScope() {
+//   console.log(globalvar);
+// }
+
+// globalScope();
+
+// 2. Local Scope (स्थानीय स्कोप):
+// Local Scope वह स्कोप होता है जो किसी फ़ंक्शन के भीतर होता है।
+
+// Local scope को दो भागों में बाँटा जा सकता है:
+// Function Scope: यदि वेरिएबल या फ़ंक्शन को किसी फ़ंक्शन के अंदर परिभाषित किया जाता है।
+// Block Scope: अगर वेरिएबल या फ़ंक्शन को {} (ब्लॉक) के अंदर परिभाषित किया जाता है (जैसे let, const के साथ)।
+
+// function localScope() {
+//   let localVar =
+//     "A local variable is a private variable defined inside a function."; // Local Scope (Function Scope)
+//   console.log(localVar);
+// }
+
+// localScope();
+
+// Block Scope with var
+// var का स्कोप function scope है, न कि block scope।
+// यदि var को किसी ब्लॉक के अंदर डिक्लेर किया जाता है, तो वह वेरिएबल पूरे फ़ंक्शन के भीतर उपलब्ध होगा, जो कि उस ब्लॉक से बाहर है।
+
+// function outerFunction() {
+//   let outerVar = "I am outer!";
+
+//   function innerFunction() {
+//     console.log(outerVar); // innerFunction को outerVar का एक्सेस है
+//   }
+
+//   return innerFunction;
+// }
+
+// let closureExample = outerFunction(); // innerFunction को outerFunction के भीतर से लौटाया गया है
+// closureExample();
+
+// a is global variable defined outside the function:
+// let a = 10;
+
+// function abc() {
+//   console.log(a * 2);
+// }
+// abc();
+
+// a is a local variable defined inside the function:
+// function abc() {
+//   let a = 10;
+//   console.log(a * 2);
+// }
+// abc();
+
+// function count() {
+//   let a = 10;
+//   // Return an inner function which closes over the count variable
+//   function count() {
+//     console.log(a * 2);
+//   }
+//   return count;
+// }
+// const counter = count();
+// counter();
+
+// JavaScript में "Asynchronous"
+
+// जब कोई Asynchronous कार्य चल रहा होता है, तो बाकी का कोड बिना किसी रुकावट के चलता रहता है।
+// इसका उपयोग तब किया जाता है जब आपको लंबी-running प्रक्रियाएं जैसे कि API Call, Data Fetching या Timer का इस्तेमाल करना होता है।
+
+// Callback एक फंक्शन होता है जो किसी Asynchronous ऑपरेशन के बाद कॉल किया जाता है। यह फंक्शन back करके परिणाम देता है।
+
+// console.log("Callback 1");
+
+// setTimeout(function () {
+//   console.log("Callback 2");
+// }, 2000);
+
+// console.log("Callback 3");
