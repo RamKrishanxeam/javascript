@@ -396,5 +396,7 @@
 
 // console.log(IsUser);
 
-
 // 8️⃣ every() Method
+// console.log(3 + false);
+
+
