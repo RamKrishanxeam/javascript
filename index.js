@@ -563,18 +563,20 @@
 
 // Callbacks | JavaScript
 
-function loadScript(src, callback) {
-  var script = document.createElement("script");
-  script.src = src;
-  script.onload = function () {
-    console.log("Loaded script with SRC" + src);
-    callback(src);
-  };
-  document.body.appendChild(script);
-}
+// function loadScript(src, callback) {
+//   var script = document.createElement("script");
+//   script.src = src;
+//   script.onload = function () {
+//     console.log("Loaded script with SRC" + src);
+//     callback(src);
+//   };
+//   document.body.appendChild(script);
+// }
 
-function hello(src) {
-  alert("Loaded script with SRC:", src);
-}
+// function hello(src) {
+//   alert("Loaded script with SRC:", src);
+// }
 
-loadScript("https://code.jquery.com/jquery-3.6.0.min.js", hello);
+// loadScript("https://code.jquery.com/jquery-3.6.0.min.js", hello);
+
+
